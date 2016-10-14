@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.uppgift1.RootController">
+   <children>
+      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="55.0" minHeight="55.0" prefHeight="55.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TabPane prefHeight="195.0" prefWidth="598.0" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="1">
+              <tabs>
+                <Tab text="Översikt">
+                  <content>
+                    <!-- <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" /> -->
+                  	<fx:include fx:id="Overview" source="Overview.fxml" />
+                  </content>
+                </Tab>
+                <Tab text="Kurser">
+                  <content>
+                    <!--<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" /> -->
+                  	<fx:include fx:id="CourseOverview" source="CourseOverview.fxml" />
+                  </content>
+                </Tab>
+                <Tab text="Studenter">
+                  <content>
+                    <!--<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" /> -->
+                  	<fx:include fx:id="StudentOverview" source="StudentOverview.fxml" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <ToolBar maxHeight="55.0" prefHeight="54.0" prefWidth="598.0">
+              <items>
+                <Button mnemonicParsing="false" onAction="#newCourseButton" text="Lägg till kurs" />
+                  <Button mnemonicParsing="false" onAction="#removeCourseButton" text="Ta bort kurs" />
+                  <Button mnemonicParsing="false" onAction="#newStudentButton" text="Lägg till student" />
+                  <Button mnemonicParsing="false" onAction="#removeStudentButton" text="Ta bort student" />
+                  <Button mnemonicParsing="false" onAction="#registerStudentOnCourseButton" text="Registrera student på kurs" />
+                  <Button mnemonicParsing="false" onAction="#deregisterStudentOnCourseButton" text="Avregistrera student från kurs" />
+              </items>
+            </ToolBar>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
